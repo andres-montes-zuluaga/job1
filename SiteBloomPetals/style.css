@@ -1,0 +1,709 @@
+:root {
+    --couleur_rose:rgba(242, 106, 142, 1);
+    --couleur_bleu1: rgba(13, 179, 216, 1);
+    --couleur_bleu2: rgba(8, 121, 165, 1);
+    --couleur_gray: rgba(234, 240, 242, 1);
+    --couleur_jaune: rgba(242, 195, 109, 1);
+    --couleur_blanc: rgba(255, 255, 255, 1);
+    --couleur_noir: rgba(1, 1, 1, 1);
+    --hauteur_header: 100px;
+    --hauteur_footer: 150px;
+    --padding_left_right: 2vw;
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/*MOBILE FIRST*/
+
+/*Réinisialiter les styles par defaut des navigateurs*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Définision du style des éléments background-color et font-family*/
+body {
+    background-color: var(--couleur_blanc);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+/*Effacer le style par defaut des éléments a*/
+a {
+    text-decoration: none;
+}
+
+/*Effacer le style par defaut des éléments ol et ul*/
+ol, ul {
+    list-style: none;
+}
+
+h1 {
+    font-size: 65px;
+    font-weight: 800;
+    color: #ffffff;
+}
+
+/*Définition du alteur et coleur du fond*/
+.header {
+    height: var(--hauteur_header);
+    background-color: var(--couleur_bleu1);
+}
+
+/*Le style du conteneur navbar*/
+.navbar {
+    height: 100%; /*pour occuper tout l'hauteur du header*/
+    display: flex; /*Positioner les éléments les uns au coté des autres*/
+    justify-content: space-between; /*Éloigner les éléments les uns des autres*/
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 0 var(--padding_left_right); /*Padding du 0 par top et bottom, et de 2 par left et right*/
+}
+
+.recherche {
+    display: flex;
+    justify-content: flex-end;
+    border-radius: 20px;
+    background-color: var(--couleur_blanc);
+    width: 300px;
+    height: 2rem;
+    border: none;
+}
+
+/*Cacher l'élément check-box, sont les éléments de notre menu*/
+.menu_hamburguesa {
+    display: none;
+}
+
+/*Captamos el elemento por su ID, cuando el check-box esté en estado checked*/
+/*el signo + significa que el elemento al lado (ul_links, en este caso) será modificado*/
+/*En este caso, para asignar la altura al elemento ul_links*/
+/*Se utiliza una función para calcular la altura, la operación es la siguiente:*/
+/*Queremos que mida el 100% de la altura de la ventana menos la altura del header*/
+.menu_hamburguesa:checked+.ul_links {
+    height: calc(100vh - var(--hauteur_header));
+}
+
+/* le da color blanco al logo            */
+.logo {
+    color: var(--couleur_blanc);
+    max-width: 300px;
+    object-fit: scale-down;
+}
+
+.label_hamburguesa {
+
+}
+
+/*Le da un color blanco al icono hamburguer               */
+.list_icon {
+    color: var(--couleur_blanc);
+    cursor: pointer; /* indica que el elemento es clicable */
+}
+
+/*Des options du menu*/
+.ul_links {
+    width: 100%;
+    background-color: var(--couleur_bleu2);
+    position: absolute;
+    /*el elemento  ul_links comienza abajo del header*/
+    top: var(--hauteur_header);
+    /*sin espacio a la izquierda*/
+    left: 0;
+    /*sin espacio arriba*/
+    height: 0;
+    /*Cacher la list quand est pas check*/
+    overflow: hidden;
+    /* ----------------->height: calc(100vh - var(--altura_header)); */
+    /*Type de conteneur*/
+    display: flex;
+    /*Positioner les éléments en colonne*/
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    /*anima la transición otorgándole una cantidad de tiempo para cambiar de un estado al otro*/
+    transition: all .3s;
+}
+
+.li_links {}
+
+/*Donner le style aux liens du menu*/
+.link {
+    font-size: 3em;
+    color: var(--couleur_blanc);
+    font-weight: bold;
+}
+
+/* Footer */
+.footer_info {
+    display: flex;
+    height: var(--hauteur_footer);
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 40px;
+    background-color: var(--couleur_bleu1);
+}
+
+.logo_footer {
+    display: flex;
+    align-items: flex-start;
+    padding-top: 40px;
+}
+
+.text_footer {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    padding-top: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.text_footer :is(a,visited) {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/*-------------------------------------------*/
+/*-------------------------------------------*/
+/*-------------------------------------------*/
+/*----------------ACCUEIL--------------------*/
+/*-------------------------------------------*/
+/*-------------------------------------------*/
+/*-------------------------------------------*/
+
+.conteneur_description {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 2vmax;
+    height: 100%;
+    padding: 5vh calc(var(--padding_left_right)*2);
+    justify-items: center;
+}
+
+.icon_fleur {
+    display: flex;
+    opacity: 1;
+    animation: aparecer 1s ease-in;
+}
+
+.text_description {
+    text-align: center;
+}
+
+hr {
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+/* Groupe du 4 images dans la page d'accueil */
+._4images {
+    display: flex;
+    flex-wrap: wrap;
+    height: 100%;
+    padding-top: 2vw;
+    padding-left: 2vw;
+    padding-right: 2vw;
+    justify-content: center;
+    align-content: center;
+    justify-items: center;
+    align-items: center;
+    object-fit: scale-down;
+    opacity: 1;
+    animation: aparecer 5s ease-in;
+}
+
+/* Chaque images dedan le grupe du 4 images dans la page d'accueil */
+.images_accueil {
+    padding: 10px;
+    object-fit: cover;
+}
+
+/* Conteneur section services dans la page d'accueil */
+._3services {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    padding: 30px;
+    /*max-width: 90%;*/
+}
+
+/* Conteneur pour chaque service dans la page d'accueil */
+article .services {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+}
+
+.img_titre_services {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 5px;
+}
+
+.img_check {
+    display: flex;
+    padding-right: 10px;
+}
+
+.titre_service {
+    font-size: 14px;
+    font-weight: 600;
+    padding-left: 10;
+}
+
+/* Déscription du service dedan conteneur class="services*/
+.description_service {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 270px;
+}
+
+/* Texte descritif du service dedan la class="description_service" */
+.text_description_service {
+    font-size: 12px;
+    font-weight: 400;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 270px;
+    line-height: 18px;
+    padding: 5px;
+}
+
+
+
+/* ------------------ */
+/* ------------------ */
+/* ------------------ */
+/*      L'equipe      */
+/* ------------------ */
+/* ------------------ */
+
+
+.membre_1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: baseline;
+    background-image: url(images/photos_equipe/photo1.jpg);
+    height: calc(100vh - var(--hauteur_header));
+    background-size: cover;
+    background-position: center;
+}
+
+.titre_equipe {
+    display: flex;
+    padding: 4rem;
+    font-weight: bolder;
+    align-items: flex-start;
+    justify-content: flex-end;
+}
+
+.nom_membre {
+    display: flex;
+    background-color: rgba(1, 1, 1, 0.5);
+    color: var(--couleur_blanc);
+    width: 25vw;
+    min-width: 200px;
+    font-weight: bold;
+    padding: 2vmax;
+    margin-left: 2vw;
+    margin-top: 3vh;
+}
+
+.profil_membre {
+    display: flex;
+    background-color: rgba(1, 1, 1, 0.5);
+    color: var(--couleur_blanc);
+    width: 25vw;
+    min-width: 200px;
+    padding: 2vmax;
+    margin-left: 2vw;
+}
+
+.membre_2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: baseline;
+    background-image: url(images/photos_equipe/photo3.jpg);
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+}
+
+.nom_membre_2 {
+    display: flex;
+    background-color: rgba(1, 1, 1, 0.5);
+    color: var(--couleur_blanc);
+    width: 25vw;
+    min-width: 200px;
+    font-weight: bold;
+    padding: 2vmax;
+    margin-left: calc(100vw - 30vw);
+    margin-top: 3vh;
+}
+
+.profil_membre_2 {
+    display: flex;
+    background-color: rgba(1, 1, 1, 0.5);
+    color: var(--couleur_blanc);
+    width: 25vw;
+    min-width: 200px;
+    padding: 2vmax;
+    margin-left: calc(100vw - 30vw);
+}
+
+.membre_3 {
+    display: flex;
+    flex-direction: column;
+    justify-content: baseline;
+    background-image: url(images/photos_equipe/photo4.jpg);
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+}
+
+.membre_4 {
+    display: flex;
+    flex-direction: column;
+    justify-content: baseline;
+    background-image: url(images/photos_equipe/photo5-q.jpg);
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+}
+
+.membre_5 {
+    display: flex;
+    flex-direction: column;
+    justify-content: baseline;
+    background-image: url(images/photos_equipe/photo6-q.jpg);
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+}
+
+/* ------------------ */
+/* ------------------ */
+/* ------------------ */
+/*    Realisations    */
+/* ------------------ */
+/* ------------------ */
+
+
+/* Conteneur du mosaique des realisations */
+.conteneur_mosaique {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--couleur_rose);
+}
+
+/* Titre du page realisations */
+.titre_realisations {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin: 0px;
+    padding: 30px;
+    color: var(--couleur_blanc);
+    background-image: url(images/photos_equipe/photo4.jpg);
+    object-fit: fill;
+    height: 500px;
+}
+
+/* Images mosaique */
+.img_mosaique {
+    padding: 10px;
+    max-width: 20vw;
+    min-width: 200px;
+    object-fit: cover;
+    transition: 1s;
+    border-radius: 10px;
+}
+
+.img_mosaique:hover {
+    transform: scale(1.5); /* zoom */
+}
+
+/* ------------------ */
+/* ------------------ */
+/*      Contact       */
+/* ------------------ */
+/* ------------------ */
+
+/* Conteneur du formulaire */
+
+.conteneur_background {
+    display: flex;
+    background-image: url(images/image1.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.conteneur_form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    /*padding: 50px;*/
+    justify-content: center;
+    background-color: rgba(94, 61, 61, 0.384);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    color: #ffffff;
+    font-weight: 600;
+    /*margin-bottom: 100px;*/
+    padding-bottom: 100px;
+}
+
+/* Titre du page contact */
+.titre_contact {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 10px;
+}
+
+/* Conteneur de deux éléments */
+.deux_infos {
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+    margin-left: 10vw;
+    margin-right: 10vw;
+    min-width: 400px;
+    justify-content: center;
+    align-items: center;
+    background-color: #636363c9;
+    
+}
+
+/* Conteneur du prenom, nom, civilite et adress postale */
+.text_form {
+    display: flex;
+    justify-content: flex-start;
+}
+
+/* Conteneur des responses type text */
+.text_response {
+    display: flex;
+    border-radius: 10px;
+}
+
+/* Style pour les inputs GetPrenom */
+#GET-Prenom {
+    border-radius: 10px;
+    border: none;
+    width: 300px;
+}
+
+/* Style pour les inputs GetNom */
+#GET-Nom {
+    border-radius: 10px;
+    border: none;
+    width: 300px;
+}
+
+/* Conteneur de liste derroulante avec la civilité */
+.liste_form {
+    display: flex;
+    width: 300px;
+}
+
+/* Style pour les inputs GetPrenom */
+.civilites {
+    border-radius: 10px;
+    border: none;
+    width: 300px;
+}
+
+/* Conteneur d'adress postale */
+.adress_form {
+    display: flex;
+    border-radius: 10px;
+    border: none;
+    width: 300px;
+}
+
+/* Style d'adress postale' */
+.GET-Adress {
+    border-radius: 10px;
+    width: 300px;
+}
+
+/* Conteneur du box politiques */
+.box_politiques {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1em;
+    margin-left: 10vw;
+    margin-right: 10vw;
+    min-width: 400px;
+    background-color: #636363c9;
+}
+
+/* Conteneur du texte politiques */
+.text_politiques {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Conteneur du checkbox politiques */
+.check_box {
+    display: flex;
+}
+
+/* Conteneur du bouton envoyer */
+.box_bouton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #636363c9;
+    padding: 1em;
+    margin-left: 10vw;
+    margin-right: 10vw;
+    min-width: 400px;
+}
+
+/* Conteneur du bouton envoyer */
+.bouton_send {
+    display: flex;
+    border-radius: 10px;
+    width: 100px;
+    font-size: 1rem;
+    padding: 1rem;
+    align-items: center;
+    text-align: center;
+    border: none;
+}
+
+/*-------------------------------------------*/
+/*-------------------------------------------*/
+/*-------------------------------------------*/
+/*-------------MEDIA QUERIES-----------------*/
+/*-------------------------------------------*/
+/*-------------------------------------------*/
+/*-------------------------------------------*/
+
+    /*Écrans superieur a 1600px*/
+    @media only screen and (min-width: 1600px) {
+
+        /*contruction de list de pages de notre site web*/
+        .ul_links {
+            position: static;
+            width: auto;
+            height: auto;
+            flex-direction: row;
+            gap: 2rem;
+            background-color: var(--couleur_bleu1);
+        }
+    
+        .link {
+            font-size: 1.2rem;
+            transition: all .3s;
+            padding: .2rem .7rem;
+        }
+    
+        .link:hover {
+            background-color: var(--couleur_bleu2);
+        }
+    
+
+        .label_hamburguesa {
+            display: none;
+        }
+
+        .menu_hamburguesa {
+            display: none;
+        }
+
+        /* Groupe du 4 images dans la page d'accueil */
+        ._4images {
+            display: flex;
+            flex-wrap: wrap;
+            height: 100%;
+            padding-top: 2vw;
+            padding-left: 2vw;
+            padding-right: 2vw;
+            justify-content: center;
+            align-content: center;
+            justify-items: center;
+            align-items: center;
+            object-fit: scale-down;
+            opacity: 1;
+            animation: aparecer 5s ease-in;
+        }
+    }
+
+    /*Écrans entre 768px et 1599px*/
+    @media only screen and (min-width: 768px) and (max-width: 1599px) {
+
+        /*contruction de list de pages de notre site web*/
+        .ul_links {
+            position: static;
+            width: auto;
+            height: auto;
+            flex-direction: row;
+            gap: 2rem;
+            background-color: var(--couleur_bleu1);
+        }
+    
+        .link {
+            font-size: 1.2rem;
+            transition: all .3s;
+            padding: .2rem .7rem;
+        }
+    
+        .link:hover {
+            background-color: var(--couleur_bleu2);
+        }
+    
+
+        .label_hamburguesa {
+            display: none;
+        }
+
+        .menu_hamburguesa {
+            display: none;
+        }
+
+        /* Groupe du 4 images dans la page d'accueil */
+        ._4images {
+            display: flex;
+            flex-wrap: wrap;
+            height: 100%;
+            padding-top: 2vw;
+            padding-left: 2vw;
+            padding-right: 2vw;
+            justify-content: center;
+            align-content: center;
+            justify-items: center;
+            align-items: center;
+            object-fit: scale-down;
+            opacity: 1;
+            animation: aparecer 5s ease-in;
+        }
+    }

@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+
+<!--la langue du document-->
+<html lang="fr">
+
+<!--La téte-->
+    <head>
+        <!-- SEO -->	
+        <!--Description-->
+        <meta name="description" content="Chez BloomPetals, nous croyons que chaque célébration mérite d'être parée de la beauté 
+        naturelle des fleurs. Nous sommes une entreprise passionnée et créative spécialisée dans 
+        la confection de magnifiques bouquets floraux pour embellir vos événements spéciaux. Que 
+        ce soit un mariage, un anniversaire, une réception ou toute autre occasion festive, nos 
+        artisans floraux talentueux travaillent avec dévouement pour créer des arrangements 
+        uniques et époustouflants qui émerveilleront vos invités.">	
+        
+        <!--Les mots clés-->
+        <meta name="keywords" content="BloomPetals, célébration, beauté naturelle, fleurs, magnifiques bouquets floraux,
+        événements spéciaux, mariage, anniversaire, réception, occasion festive, artisans floraux, arrangements uniques">
+        
+        <!--Auteur-->
+        <meta name="author" content="BloomPetals">	
+
+        <!--Type des jeus de caractères-->
+        <meta charset="UTF-8">
+        <!--Definition de viewport-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--Titre de la page-->
+        <title>BloomPetals</title>
+        <!---->
+        <link href="style.css" rel="stylesheet">
+        <!--Création d'élément main pour représenter le contenú majoritaire du body-->
+        <main hidden="true">
+            <p>
+                Chez BloomPetals, nous croyons que chaque célébration mérite d'être parée de la beauté 
+                naturelle des fleurs. 
+            </p>
+            <p>
+                Nous sommes une entreprise passionnée et créative spécialisée dans 
+                la confection de magnifiques bouquets floraux pour embellir vos événements spéciaux. Que 
+                ce soit un mariage, un anniversaire, une réception ou toute autre occasion festive, nos 
+                artisans floraux talentueux travaillent avec dévouement pour créer des arrangements 
+                uniques et époustouflants qui émerveilleront vos invités.
+            </p>
+        </main>
+    </head>
+    
+    <body>
+        <header class="header">
+            <!--Création de contenur pour le menu-->
+            <nav class="navbar">
+
+                <!--Logo-->
+                <img class="logo" src="images/logo_blanc.png">
+
+                
+                <!--Création du conteneur pour la box de recherche-->
+                <input type="search" class="recherche" name="q" />
+
+                <label class="label_hamburguesa" for="menu_hamburguesa">
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="35"
+                        height="35"
+                        fill="currentColor"
+                        class="list_icon"
+                        viewBox="0 0 16 16"
+                    >
+                        <path
+                            fill-rule="evenodd"
+                            d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"
+                        />
+                    </svg>
+                </label>
+
+                <!--Élément checkbox pour l'interaction de menu hamburguer-->
+                <input class="menu_hamburguesa" type="checkbox" name="" id="menu_hamburguesa">
+
+                <!--Création d'options pour la navigation-->
+                <ul class="ul_links">
+                    <li class="li_links">
+                        <a href="index.html" class="link">Home</a>
+                    </li>
+                    <li class="li_links">
+                        <a href="entreprise.html" class="link">Entreprise</a>
+                    </li>
+                    <li class="li_links">
+                        <a href="realisations.html" class="link">Réalisations</a>
+                    </li>
+                    <li class="li_links">
+                        <a href="contact.html" class="link">Contact</a>
+                    </li>
+                </ul>
+
+
+            </nav>
+        </header>
+
+        
+        <!--Création d'un article avec le logo et la description de l'entreprise-->
+        <article class="conteneur_description">
+
+            <!--Une nuveaux conteneur pour icon_fleur-->
+            <img class="icon_fleur" src="images/icons/fleur_rose.png" width="50px">
+            
+            <!--div pour le texte descritif-->
+            <p class="text_description">
+                Nous sommes une entreprise passionnée et créative spécialisée dans 
+                la confection de magnifiques bouquets floraux pour embellir vos événements spéciaux. Que 
+                ce soit un mariage, un anniversaire, une réception ou toute autre occasion festive, nos 
+                artisans floraux talentueux travaillent avec dévouement pour créer des arrangements 
+                uniques et époustouflants qui émerveilleront vos invités.
+            </p>
+
+        </article>
+
+
+                <!--Ligne divisoire-->
+        <hr>
+
+        <!--Création d'un conteneur pour le premiere groupe d'images-->
+        <section class="_4images">
+
+            <!--Groupe d'images-->
+            <img class="images_accueil" src="images/image1.jpg" width="200px" height="145px"/>
+            <img class="images_accueil" src="images/image2.jpg" width="200px" height="145px"/>
+            <img class="images_accueil" src="images/image3.jpg" width="200px" height="145px"/>
+            <img class="images_accueil" src="images/image4.jpg" width="200px" height="145px"/>
+        
+        </section>
+
+        <!--Ligne divisoire-->
+        <hr>
+
+                <!--Conteneur pour les trois services-->
+                <section class="_3services">
+
+                    <!--Conteneur por l'article #1 de chaque services-->
+                    <article class="services">
+        
+                        <!--Conteneur pour l'image du check et le titre du service #1-->
+                        <div class="img_titre_services">
+        
+                            <img class="img_check" src="images/check_blue.webp" height="15px"/>
+                            <div class="titre_service">
+                                Création de bouquets personnalisés
+                            </div>
+        
+                        </div>
+        
+                        <!--Déscription du service #1 dedan conteneur class="services"-->
+                        <section class="descrition_service">
+        
+                            <div class="text_description_service">
+                                BloomPetals propose des bouquets floraux personnalisés pour toutes les occasions, 
+                                créés par des artisans talentueux en collaboration avec les clients pour répondre 
+                                à leurs goûts et à l'ambiance de l'événement.
+                            </div>                    
+        
+                        <!--Balises fermante du section déscription du service #1-->
+                        </section>
+        
+                    <!--Balise fermante c'article sur le service #1-->
+                    </article>
+        
+        
+                    <!--Conteneur por l'article #2 de chaque services-->
+                    <article class="services">
+        
+                        <!--Conteneur pour l'image du check et le titre du service-->
+                        <div class="img_titre_services">
+        
+                            <img class="img_check" src="images/check_blue.webp" height="15px"/>
+                            <div class="titre_service">
+                                Décoration Florale d'Événements
+                            </div>
+        
+                        </div>
+        
+                        <!--Déscription du service #2 dedan conteneur class="services"-->
+                        <section class="descrition_service">
+        
+                            <div class="text_description_service">
+                                Notre équipe transforme les lieux de fêtes en espaces enchanteurs avec 
+                                des fleurs fraîches, créant des décors captivants et offrant un service 
+                                complet pour une expérience sans stress.
+                            </div>                    
+        
+                        <!--Balises fermante du section déscription du service #2-->
+                        </section>
+        
+                    <!--Balise fermante c'article sur le service #2-->
+                    </article>
+        
+        
+                    <!--Conteneur por l'article #3 de chaque services-->
+                    <article class="services">
+        
+                        <!--Conteneur pour l'image du check et le titre du service #3-->
+                        <div class="img_titre_services">
+        
+                            <img class="img_check" src="images/check_blue.webp" height="15px"/>
+                            <div class="titre_service">
+                                Ateliers de Composition Florale
+                            </div>
+        
+                        </div>
+        
+                        <!--Déscription du service #3 dedan conteneur class="services"-->
+                        <section class="descrition_service">
+        
+                            <div class="text_description_service">
+                                BloomPetals propose des ateliers de composition florale interactifs, 
+                                parfaits pour les amateurs de fleurs. Nos experts guident les participants 
+                                dans la création de leurs propres arrangements, offrant une expérience 
+                                enrichissante et ludique pour divers événements.
+                            </div>                    
+        
+                        <!--Balises fermante du section déscription du service #3-->
+                        </section>
+        
+                    <!--Balise fermante c'article sur le service #3-->
+                    </article>
+        
+                <!--Balise fermante du container class"_3services"-->
+                </section>
+        
+        
+            <!--Ligne divisoire-->
+            <hr>
+        
+        
+                <!--Création d'un conteneur pour le premiere groupe d'images-->
+                <section class="_4images">
+        
+                    <!--Groupe d'images-->
+                    <img class="images_accueil" src="images/image5.jpg" width="200px" height="145px"/>
+                    <img class="images_accueil" src="images/image6.jpg" width="200px" height="145px"/>
+                    <img class="images_accueil" src="images/image7.jpg" width="200px" height="145px"/>
+                    <img class="images_accueil" src="images/image8.jpg" width="200px" height="145px"/>
+                
+                </section>
+
+                <section class="conteneur_description"></div>
+                    <div class="_4images">
+                        <!--Une nuveaux conteneur pour icon_fleur-->
+                        <img class="icon_fleur" src="images/icons/fleur_rose.png" width="50px">
+                        <br>
+                    </div>
+                </section>
+            
+            
+            <footer>
+                <!--Création du footer avec l'info de l'entreprise-->
+                <section class="footer_info">
+                    
+                    <img class="logo-footer" src="images/logo_blanc.png" width="200px"/>
+        
+                    <div class="text_footer">
+                    <p class="a_menu">
+                    13001, Marseille - France   |   
+                    <a href="tel:07 45 66 79 24">07 45 66 79 24</a>   |
+                    
+                    <a href="mailto:accueil@bloompetals.com">   accueil@bloompetals.com</a>
+                    </p>
+                    </div>
+        
+                </section>
+        
+            </footer>
+        
+    </body>
+
+</html>
